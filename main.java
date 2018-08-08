@@ -33,7 +33,7 @@ public class main
 		//1. key
 		SecretKeySpec skeySpec = new SecretKeySpec(decryptKey.getBytes("UTF-8"),"AES");
 		//2. cipher
-		Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding","BC");
+		Cipher cipher = Cipher.getInstance("AES/ECB/PKCS7Padding","BC");
 		cipher.init(Cipher.DECRYPT_MODE, skeySpec);
 		try{
 		byte[] original = cipher.doFinal(encryptBytes);
